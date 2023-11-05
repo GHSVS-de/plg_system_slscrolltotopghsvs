@@ -1,0 +1,21 @@
+{
+  "$schema": "https://developer.joomla.org/schemas/json-schema/web_assets.json",
+  "name": "plg_system_slscrolltotopghsvs",
+  "version": "2023.11.05",
+	"versionSub": "",
+  "description": "Joomla system plugin. Adds a scroll to top button in frontend and/or backend.",
+  "license": "GNU General Public License version 3 or later; see LICENSE.txt.",
+	"assets": [
+		{
+			"name": "plg_system_slscrolltotopghsvs.jquery",
+			"description": "",
+			"type": "script",
+			"uri": "plg_system_slscrolltotopghsvs/scrolltotop_jq.js",
+			"version": "2023.11.05",
+			"dependencies": [
+				"jquery-noconflict",
+				"jquery-migrate"
+			]
+		}
+	]
+}

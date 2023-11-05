@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/**
+ * @copyright	Copyright (c) 2013 Skyline Software (http://extstore.com). All rights reserved.
+ * @license		GNU General Public License version 3 or later; see LICENSE.txt
+ * @copyright	Edited by GHSVS 2023-11. Modifications by ghsvs.de will no longer reflect the original work of its authors.
+ */
+-->
+<extension type="plugin" version="1.7" group="system" method="upgrade">
+	<name>PLG_SYSTEM_SLSCROLLTOTOPGHSVS</name>
+	<author>Pham Minh Tuan; edit by ghsvs.de</author>
+	<creationDate>January 2012</creationDate>
+	<copyright>Copyright (c) 2013 Skyline. All rights reserved. Edited by ghsvs.de</copyright>
+	<license>GNU General Public License version 3 or later; see LICENSE.txt</license>
+	<authorUrl>https://ghsvs.de</authorUrl>
+	<version>2023.11.05</version>
+	<description>PLG_SYSTEM_SLSCROLLTOTOPGHSVS_XML_DESCRIPTION</description>
+
+	<files>
+		<folder>language</folder>
+		<folder plugin="slscrolltotopghsvs">services</folder>
+		<folder>src</folder>
+		<filename>LICENSE.txt</filename>
+		<filename>README.md</filename>
+	</files>
+
+	<media folder="media" destination="plg_system_slscrolltotopghsvs">
+		<folder>images</folder>
+		<folder>js</folder>
+		<filename>joomla.asset.json</filename>
+	</media>
+	<namespace path="src">GHSVS\Plugin\System\SlScrolltotopGhsvs</namespace>
+	<config addfieldprefix="GHSVS\Plugin\System\SlScrolltotopGhsvs\Field">
+		<fields name="params">
+			<fieldset name="basic">
+				<field
+					name="admin_enable"
+					type="list"
+					default="|site|administrator|"
+					label="PLG_SYSTEM_SLSCROLLTOTOPGHSVS_FIELD_ADMIN_ENABLE_LABEL"
+				>
+					<option value="0">JNONE</option>
+					<option value="|site|administrator|">Frontend/Backend</option>
+					<option value="|site|">Frontend</option>
+					<option value="|administrator|">Backend</option>
+				</field>
+
+				<field
+					name="engine"
+					type="list"
+					default="jquery"
+					label="PLG_SYSTEM_SLSCROLLTOTOPGHSVS_FIELD_ENGINE_LABEL"
+				>
+					<option value="jquery">jQuery</option>
+				</field>
+
+				<field
+					name="image"
+					type="media"
+					label="PLG_SYSTEM_SLSCROLLTOTOPGHSVS_FIELD_IMAGE_LABEL"
+					description="PLG_SYSTEM_SLSCROLLTOTOPGHSVS_FIELD_IMAGE_DESC"
+				/>
+
+				<field
+					name="text"
+					type="trim"
+					default="ToTop"
+					label="PLG_SYSTEM_SLSCROLLTOTOPGHSVS_FIELD_TEXT_LABEL"
+					description="PLG_SYSTEM_SLSCROLLTOTOPGHSVS_FIELD_TEXT_DESC"
+				/>
+
+				<field
+					name="title"
+					type="trim"
+					default=""
+					label="PLG_SYSTEM_SLSCROLLTOTOPGHSVS_FIELD_TITLE_LABEL"
+					description="PLG_SYSTEM_SLSCROLLTOTOPGHSVS_FIELD_TITLE_DESC"
+				/>
+
+				<field
+					name="background_color"
+					type="color"
+					default="#121212"
+					label="PLG_SYSTEM_SLSCROLLTOTOPGHSVS_FIELD_BACKGROUND_COLOR_LABEL"
+				/>
+
+				<field
+					name="color"
+					type="color"
+					default="#FFFFFF"
+					label="PLG_SYSTEM_SLSCROLLTOTOPGHSVS_FIELD_COLOR_LABEL"
+				/>
+
+				<field
+					name="hover_background_color"
+					type="color"
+					default="#08C"
+					label="PLG_SYSTEM_SLSCROLLTOTOPGHSVS_FIELD_HOVER_BACKGROUND_COLOR_LABEL"
+				/>
+
+				<field
+					name="hover_color"
+					type="color"
+					default="#FFFFFF"
+					label="PLG_SYSTEM_SLSCROLLTOTOPGHSVS_FIELD_HOVER_COLOR_LABEL"
+				/>
+
+				<field
+					name="position"
+					type="list"
+					default="bottom_right"
+					label="PLG_SYSTEM_SLSCROLLTOTOPGHSVS_FIELD_POSITION_LABEL"
+					description="PLG_SYSTEM_SLSCROLLTOTOPGHSVS_FIELD_POSITION_DESC"
+				>
+					<option value="top_left">PLG_SYSTEM_SLSCROLLTOTOPGHSVS_FIELD_POSITION_TOP_LEFT</option>
+					<option value="top_right">PLG_SYSTEM_SLSCROLLTOTOPGHSVS_FIELD_POSITION_TOP_RIGHT</option>
+					<option value="bottom_left">PLG_SYSTEM_SLSCROLLTOTOPGHSVS_FIELD_POSITION_BOTTOM_LEFT</option>
+					<option value="bottom_right">PLG_SYSTEM_SLSCROLLTOTOPGHSVS_FIELD_POSITION_BOTTOM_RIGHT</option>
+				</field>
+
+				<field
+					name="border_radius"
+					type="number"
+					min="0"
+					filter="integer"
+					default="3"
+					label="PLG_SYSTEM_SLSCROLLTOTOPGHSVS_FIELD_BORDER_RADIUS_LABEL"
+					description="PLG_SYSTEM_SLSCROLLTOTOPGHSVS_FIELD_BORDER_RADIUS_DESC"
+				/>
+
+				<field
+					name="offset_x"
+					type="number"
+					min="0"
+					filter="integer"
+					default="20"
+					label="PLG_SYSTEM_SLSCROLLTOTOPGHSVS_FIELD_OFFSET_X_LABEL"
+					description="PLG_SYSTEM_SLSCROLLTOTOPGHSVS_FIELD_OFFSET_X_DESC"
+				/>
+
+				<field
+					name="offset_y"
+					type="number"
+					min="0"
+					filter="integer"
+					default="20"
+					label="PLG_SYSTEM_SLSCROLLTOTOPGHSVS_FIELD_OFFSET_Y_LABEL"
+					description="PLG_SYSTEM_SLSCROLLTOTOPGHSVS_FIELD_OFFSET_Y_DESC"
+				/>
+
+				<field
+					name="padding_x"
+					type="number"
+					min="0"
+					filter="integer"
+					default="12"
+					label="PLG_SYSTEM_SLSCROLLTOTOPGHSVS_FIELD_PADDING_X_LABEL"
+					description="PLG_SYSTEM_SLSCROLLTOTOPGHSVS_FIELD_PADDING_X_DESC"
+				/>
+
+				<field
+					name="padding_y"
+					type="number"
+					min="0"
+					filter="integer"
+					default="12"
+					label="PLG_SYSTEM_SLSCROLLTOTOPGHSVS_FIELD_PADDING_Y_LABEL"
+					description="PLG_SYSTEM_SLSCROLLTOTOPGHSVS_FIELD_PADDING_Y_DESC"
+				/>
+
+			</fieldset>
+
+			<fieldset name="advanced">
+				<field
+					name="duration"
+					type="number"
+					min="0"
+					filter="integer"
+					default="500"
+					label="PLG_SYSTEM_SLSCROLLTOTOPGHSVS_FIELD_DURATION_LABEL"
+					description="PLG_SYSTEM_SLSCROLLTOTOPGHSVS_FIELD_DURATION_DESC"
+				/>
+
+				<field
+					name="transition"
+					type="list"
+					default="Fx.Transitions.linear"
+					label="PLG_SYSTEM_SLSCROLLTOTOPGHSVS_FIELD_TRANSITION_LABEL"
+					description="PLG_SYSTEM_SLSCROLLTOTOPGHSVS_FIELD_TRANSITION_DESC"
+				>
+					<option value="Fx.Transitions.linear">Fx.Transitions.linear</option>
+				</field>
+
+				<field
+					name="custom_css"
+					type="textarea"
+					default=""
+					label="PLG_SYSTEM_SLSCROLLTOTOPGHSVS_FIELD_CUSTOM_CSS_LABEL"
+					description="PLG_SYSTEM_SLSCROLLTOTOPGHSVS_FIELD_CUSTOM_CSS_DESC"
+				/>
+			</fieldset>
+		</fields>
+	</config>
+</extension>
