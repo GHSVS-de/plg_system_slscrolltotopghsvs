@@ -6,7 +6,7 @@ use Joomla\CMS\Extension\PluginInterface;
 use Joomla\CMS\Factory;
 use Joomla\CMS\Plugin\PluginHelper;
 #use Joomla\CMS\User\UserFactoryInterface;
-use Joomla\Database\DatabaseInterface;
+#use Joomla\Database\DatabaseInterface;
 use Joomla\DI\Container;
 use Joomla\DI\ServiceProviderInterface;
 use Joomla\Event\DispatcherInterface;
@@ -21,19 +21,12 @@ return new class () implements ServiceProviderInterface
 			PluginInterface::class,
 			function (Container $container)
 			{
-				$app = Factory::getApplication();
 				$dispatcher = $container->get(DispatcherInterface::class);
 				$plugin = new SlScrolltotopGhsvs(
 					$dispatcher,
 					(array) PluginHelper::getPlugin('system', 'slscrolltotopghsvs'),
-					$app,
-					#$app->getInput(),
-					#new ImportfontsGhsvsHelper(),
-					#new Cssparser(),
 				);
-				$plugin->setApplication($app);
-				#$plugin->setDatabase($container->get(DatabaseInterface::class));
-				#$plugin->setUserFactory($container->get(UserFactoryInterface::class));
+				$plugin->setApplication(Factory::getApplication());
 
 				return $plugin;
 			}
