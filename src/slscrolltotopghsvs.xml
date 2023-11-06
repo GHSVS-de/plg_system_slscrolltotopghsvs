@@ -6,22 +6,33 @@
  * @copyright	Edited by GHSVS 2023-11. Modifications by ghsvs.de will no longer reflect the original work of its authors.
  */
 -->
-<extension type="plugin" version="1.7" group="system" method="upgrade">
-	<name>PLG_SYSTEM_SLSCROLLTOTOPGHSVS</name>
-	<author>Pham Minh Tuan; edit by ghsvs.de</author>
-	<creationDate>January 2012</creationDate>
-	<copyright>Copyright (c) 2013 Skyline. All rights reserved. Edited by ghsvs.de</copyright>
-	<license>GNU General Public License version 3 or later; see LICENSE.txt</license>
-	<authorUrl>https://ghsvs.de</authorUrl>
-	<version>2023.11.06</version>
-	<description>PLG_SYSTEM_SLSCROLLTOTOPGHSVS_XML_DESCRIPTION</description>
+<extension type="{{type}}" client="{{client}}" group="{{folder}}" method="{{method}}">
+	<name>{{nameUpper}}</name>
+	<author>{{authorName}}</author>
+	<creationDate>{{creationDate}}</creationDate>
+	<copyright>{{copyright}}</copyright>
+	<license>{{licenseLong}}</license>
+	<authorUrl>{{authorUrl}}</authorUrl>
+	<version>{{version}}</version>
+	<description>{{nameUpper}}_XML_DESCRIPTION</description>
+
+	<updateservers><server type="extension" priority="1" name="{{nameUpper}}">{{xmlserver}}/{{name}}-update.xml</server></updateservers>
+
+	<infourl>{{infourl}}</infourl>
+
+	<scriptfile>installerScript.php</scriptfile>
+	<minimumPhp>{{minimumPhp}}</minimumPhp>
+	<maximumPhp>{{maximumPhp}}</maximumPhp>
+	<minimumJoomla>{{minimumJoomla}}</minimumJoomla>
+	<maximumJoomla>{{maximumJoomla}}</maximumJoomla>
+	<allowDowngrades>{{allowDowngrades}}</allowDowngrades>
 
 	<files>
 		<folder>language</folder>
-		<folder plugin="slscrolltotopghsvs">services</folder>
+		<folder plugin="{{filename}}">services</folder>
 		<folder>src</folder>
+		<filename>installerScript.php</filename>
 		<filename>LICENSE.txt</filename>
-		<filename>README.md</filename>
 	</files>
 
 	<media folder="media" destination="plg_system_slscrolltotopghsvs">
@@ -29,10 +40,11 @@
 		<folder>js</folder>
 		<filename>joomla.asset.json</filename>
 	</media>
-	<namespace path="src">GHSVS\Plugin\System\SlScrolltotopGhsvs</namespace>
-	<config addfieldprefix="GHSVS\Plugin\System\SlScrolltotopGhsvs\Field">
+	{{namespace}}
+	<config{{addfieldprefix}}>
 		<fields name="params">
 			<fieldset name="basic">
+				<field type="hidden" default="1" name="{{filename}}plugin"/>
 				<field
 					name="admin_enable"
 					type="list"
@@ -40,9 +52,9 @@
 					label="PLG_SYSTEM_SLSCROLLTOTOPGHSVS_FIELD_ADMIN_ENABLE_LABEL"
 				>
 					<option value="0">JNONE</option>
-					<option value="|site|administrator|">Frontend/Backend</option>
-					<option value="|site|">Frontend</option>
-					<option value="|administrator|">Backend</option>
+					<option value="|site|administrator|">PLG_SYSTEM_SLSCROLLTOTOPGHSVS_CLIENT</option>
+					<option value="|site|">PLG_SYSTEM_SLSCROLLTOTOPGHSVS_CLIENT_SITE</option>
+					<option value="|administrator|">PLG_SYSTEM_SLSCROLLTOTOPGHSVS_CLIENT_ADMINISTRATOR</option>
 				</field>
 
 				<field
@@ -51,7 +63,7 @@
 					default="jquery"
 					label="PLG_SYSTEM_SLSCROLLTOTOPGHSVS_FIELD_ENGINE_LABEL"
 				>
-					<option value="jquery">jQuery</option>
+					<option value="jquery">PLG_SYSTEM_SLSCROLLTOTOPGHSVS_ENGINE_JQUERY</option>
 				</field>
 
 				<field
