@@ -19,17 +19,6 @@ use Joomla\Event\DispatcherInterface;
 
 final class SlScrolltotopGhsvs extends CMSPlugin
 {
-
-	/**
-	 * Application object
-	 *
-	 * @var    \Joomla\CMS\Application\CMSApplication
-	 * @since  4.0.0
-	 */
-	private $app;
-
-	private $wa;
-
 	/**
 	 * Load plugin language files automatically
 	 *
@@ -38,31 +27,22 @@ final class SlScrolltotopGhsvs extends CMSPlugin
 	 */
 	protected $autoloadLanguage = true;
 
-	public function __construct(
-		DispatcherInterface $dispatcher,
-		array $config,
-		ApplicationInterface $app = null
-	) {
-		parent::__construct($dispatcher, $config);
-		$this->app = $app;
-	}
-
 	function onAfterRoute()
 	{
-		if ($this->app->getDocument()->getType() !== 'html')
+		if ($this->getApplication()->getDocument()->getType() !== 'html')
 		{
 			return;
 		}
 
 		$admin_enable	= $this->params->get('admin_enable', '|site|administrator|');
 
-		if (strpos($admin_enable, '|' . strtolower($this->app->getName()) . '|') === false)
+		if (strpos($admin_enable, '|' . strtolower($this->getApplication()->getName()) . '|') === false)
 		{
 			return;
 		}
 
-		$this->wa = $this->app->getDocument()->getWebAssetManager();
-		$this->wa->getRegistry()->addExtensionRegistryFile('plg_system_slscrolltotopghsvs');
+		$wa = $this->getApplication()->getDocument()->getWebAssetManager();
+		$wa->getRegistry()->addExtensionRegistryFile('plg_system_slscrolltotopghsvs');
 
 		$text = $this->clean($this->params->get('text', 'ToTop'));
 		$title = $this->clean($this->params->get('title', ''));
@@ -143,7 +123,7 @@ final class SlScrolltotopGhsvs extends CMSPlugin
 }
 CSS;
 
-		$this->wa->addInlineStyle(
+		$wa->addInlineStyle(
 			$css,
 			[],
 			['name' => 'plg_system_slscrolltotopghsvs.css'],
@@ -151,14 +131,14 @@ CSS;
 
 		if ($custom_css)
 		{
-			$this->wa->addInlineStyle(
+			$wa->addInlineStyle(
 				$custom_css,
 				[],
 				['name' => 'plg_system_slscrolltotopghsvs.custom_css'],
 			);
 		}
 
-		$this->wa->useScript('plg_system_slscrolltotopghsvs.jquery');
+		$wa->useScript('plg_system_slscrolltotopghsvs.jquery');
 
 			$js			= <<<SCRIPTHERE
 jQuery(document).ready(function() {
@@ -173,7 +153,7 @@ jQuery(document).ready(function() {
 SCRIPTHERE;
 
 
-		$this->wa->addInlineScript(
+		$wa->addInlineScript(
 			$js,
 			[],
 			['name' => 'plg_system_slscrolltotopghsvs.js'],
