@@ -27,7 +27,7 @@ final class SlScrolltotopGhsvs extends CMSPlugin
 	 */
 	protected $autoloadLanguage = true;
 
-	function onAfterRoute()
+	function onBeforeCompileHead()
 	{
 		if ($this->getApplication()->getDocument()->getType() !== 'html')
 		{
