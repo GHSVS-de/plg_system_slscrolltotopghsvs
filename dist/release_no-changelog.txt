@@ -1,0 +1,30 @@
+2023.11.08
+
+Joomla system plugin SlScrolltotopGhsvs 2023.11.08
+
+Checksum entities: `&lt;sha256&gt;8aeea37071834353104dd150ebd9de8da1d65f98fe3c1ee941dd6058935e31d0&lt;/sha256&gt;`
+
+Joomla system plugin. Adds a scroll to top button in frontend and/or backend. A fork of plugin 'System - Skyline Scroll To Top' by Skyline Software (http://extstore.com , Pham Minh Tuan).
+
+### Joomla 4.3+, Joomla 5
+### First version that supports Joomla's update server functionality
+
+### Download
+[plg_system_slscrolltotopghsvs-2023.11.08.zip](https://github.com/GHSVS-de/plg_system_slscrolltotopghsvs/raw/2023.11.08/dist/plg_system_slscrolltotopghsvs-2023.11.08.zip)
+
+### Joomla-Target-Platform(s)
+4\.(3|4|5|6|7|8|9|10|11|12|13|14|15), 5.&ast;
+
+### For the interested ones
+- First version that supports Joomla's update server functionality
+- [Compare releases 2023.11.07...2023.11.08](https://github.com/GHSVS-de/plg_system_slscrolltotopghsvs/compare/2023.11.07...2023.11.08)
+- minimumJoomla: 4.3.0
+- maximumJoomla: 5.9999.9999
+- minimumPhp: 7.4.0
+- maximumPhp:
+- Checksum: `<sha256>8aeea37071834353104dd150ebd9de8da1d65f98fe3c1ee941dd6058935e31d0</sha256>`
+- Readme: https://github.com/GHSVS-de/plg_system_slscrolltotopghsvs#readme
+- Updates XML: https://raw.githubusercontent.com/GHSVS-de/upadateservers/master/plg_system_slscrolltotopghsvs-update.xml
+- Last tests: PHP 8.2<br>PHP 8.1<br>Joomla 4.4<br>Joomla 5.0
+- Language files: en-GB
+- Requires: jQuery
