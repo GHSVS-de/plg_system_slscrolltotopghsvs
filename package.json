@@ -2,8 +2,8 @@
 	"name": "plg_system_slscrolltotopghsvs",
 	"nameReal": "plg_system_slscrolltotopghsvs",
 	"filename": "slscrolltotopghsvs",
-	"version": "2023.11.08",
-	"versionCompare": "2023.11.07",
+	"version": "2023.11.09",
+	"versionCompare": "2023.11.08",
 	"versionSub": "",
 	"update": {
 		"infourl": "https://github.com/GHSVS-de/plg_system_slscrolltotopghsvs{{thisRelease}}",
