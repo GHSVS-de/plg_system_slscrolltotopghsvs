@@ -45,7 +45,7 @@ final class SlScrolltotopGhsvs extends CMSPlugin
 		$wa = $this->getApplication()->getDocument()->getWebAssetManager();
 		$wa->getRegistry()->addExtensionRegistryFile('plg_system_slscrolltotopghsvs');
 
-		$text = $this->clean($this->params->get('text', 'ToTop'));
+		$text = $this->clean($this->params->get('text', ''));
 		$title = $this->clean($this->params->get('title', ''));
 		$duration = (int) $this->params->get('duration', 500);
 		$transition = $this->params->get('transition', 'Fx.Transitions.linear');
