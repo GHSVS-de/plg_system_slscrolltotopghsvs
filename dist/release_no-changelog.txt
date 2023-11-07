@@ -6,6 +6,9 @@ Checksum entities: `&lt;sha256&gt;c7217bc66a577be46c1be3dd77a9a059964085009c7aa4
 
 Joomla system plugin. Adds a scroll to top button in frontend and/or backend. A fork of plugin 'System - Skyline Scroll To Top' by Skyline Software (http://extstore.com , Pham Minh Tuan).
 
+### Joomla 4.3+, Joomla 5
+### Bug fix release
+
 ### Download
 [plg_system_slscrolltotopghsvs-2023.11.09.zip](https://github.com/GHSVS-de/plg_system_slscrolltotopghsvs/raw/2023.11.09/dist/plg_system_slscrolltotopghsvs-2023.11.09.zip)
 
@@ -17,16 +20,10 @@ Joomla system plugin. Adds a scroll to top button in frontend and/or backend. A 
 - minimumJoomla: 4.3.0
 - maximumJoomla: 5.9999.9999
 - minimumPhp: 7.4.0
-- maximumPhp: 
+- maximumPhp:
 - Checksum: `<sha256>c7217bc66a577be46c1be3dd77a9a059964085009c7aa47362287d0318d7333a</sha256>`
 - Readme: https://github.com/GHSVS-de/plg_system_slscrolltotopghsvs#readme
 - Updates XML: https://raw.githubusercontent.com/GHSVS-de/upadateservers/master/plg_system_slscrolltotopghsvs-update.xml
 - Last tests: PHP 8.2<br>PHP 8.1<br>Joomla 4.4<br>Joomla 5.0
 - Language files: en-GB
 - Requires: jQuery
-- Uses: 
-- Contained packages (sub Joomla extensions):
-```
-
-```
-
