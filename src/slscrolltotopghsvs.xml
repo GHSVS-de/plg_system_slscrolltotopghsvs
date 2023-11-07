@@ -75,8 +75,9 @@
 
 				<field
 					name="text"
-					type="trim"
-					default="ToTop"
+					type="text"
+					filter="string"
+					default=""
 					label="PLG_SYSTEM_SLSCROLLTOTOPGHSVS_FIELD_TEXT_LABEL"
 					description="PLG_SYSTEM_SLSCROLLTOTOPGHSVS_FIELD_TEXT_DESC"
 				/>

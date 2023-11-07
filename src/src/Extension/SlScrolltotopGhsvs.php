@@ -16,6 +16,7 @@ use Joomla\Application\ApplicationInterface;
 use Joomla\CMS\Application\CMSApplication;
 use Joomla\CMS\Language\Text;
 use Joomla\Event\DispatcherInterface;
+use Joomla\CMS\Uri\Uri;
 
 final class SlScrolltotopGhsvs extends CMSPlugin
 {
@@ -67,6 +68,11 @@ final class SlScrolltotopGhsvs extends CMSPlugin
 			$wurmInfos = HTMLHelper::_('cleanImageURL', $image);
 			// $image = HTMLHelper::_('image', $image, '');
 			$image = Uri::root() . $wurmInfos->url;
+		}
+
+		if (empty($image) && empty($text))
+		{
+			$text = 'ToTop';
 		}
 
 		$position_css	= '';
