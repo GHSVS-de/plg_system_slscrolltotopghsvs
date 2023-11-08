@@ -12,6 +12,9 @@ An adaption of plugin `System - Skyline Scroll To Top` by `Skyline Software` (ht
  */
 ```
 
+## Deutsche Beschreibung/Deutsches Manual
+https://ghsvs.de/programmierer-schnipsel/joomla/372-scroll-to-top-button-in-backend-und-oder-frontend
+
 ----------------------
 
 # My personal build procedure (WSL 1, Debian, Win 10)
